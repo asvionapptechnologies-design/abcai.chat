@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC AI Chat - Your Personal AI Companion</title>
+    <meta name="description" content="ABC AI Chat is your personal AI companion for meaningful conversations, emotional support, and genuine connection.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            padding: 4rem 0 2rem 0;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            background: linear-gradient(135deg, #9B59B6, #E84393);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+        }
+        
+        .description {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            color: #ccc;
+        }
+        
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #9B59B6, #E84393);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .feature-card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #E84393;
+        }
+        
+        .feature-card p {
+            color: #aaa;
+        }
+        
+        .emoji {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .legal-links a {
+            color: #9B59B6;
+            text-decoration: none;
+        }
+        
+        .legal-links a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .tagline { font-size: 1.2rem; }
+            .description { font-size: 1rem; }
+            .container { padding: 1rem; }
+            .features { grid-template-columns: 1fr; }
+            .legal-links { gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ABC AI Chat</h1>
+            <div class="tagline">Your Personal AI Companion</div>
+            <div class="description">
+                Meaningful conversations. Emotional support. Genuine connection.
+            </div>
+            <a href="#" class="button">Coming Soon on Google Play</a>
+        </header>
+        
+        <div class="features">
+            <div class="feature-card">
+                <span class="emoji">🤖</span>
+                <h3>Intelligent Conversations</h3>
+                <p>Advanced AI that understands context, remembers your preferences, and responds with genuine empathy.</p>
+            </div>
+            <div class="feature-card">
+                <span class="emoji">🔒</span>
+                <h3>Private & Secure</h3>
+                <p>End-to-end encryption ensures your conversations stay between you and your AI companion. We never share your data.</p>
+            </div>
+            <div class="feature-card">
+                <span class="emoji">🎥</span>
+                <h3>Video & Voice Calls</h3>
+                <p>Experience real-time video and voice calls with your AI companion for deeper, more meaningful connection.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="legal-links">
+                <a href="/privacy-policy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="mailto:support@abcai.chat">Contact Support</a>
+            </div>
+            <p>© 2026 ABC AI Chat. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
