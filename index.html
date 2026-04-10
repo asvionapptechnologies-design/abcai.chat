@@ -3,118 +3,350 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABC AI Chat - Your Personal AI Companion</title>
-    <meta name="description" content="ABC AI Chat is your personal AI companion for meaningful conversations, emotional support, and genuine connection.">
+    <title>Yario - Talk Freely · Stay Close</title>
+    <meta name="description" content="Yario is your personal AI companion for meaningful conversations, emotional support, and genuine connection.">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+            background: #080112;
             color: #ffffff;
             line-height: 1.6;
             min-height: 100vh;
+            overflow-x: hidden;
         }
-        
+
+        /* ── Ambient orbs ── */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .orb-1 {
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(139,92,246,0.45), transparent 70%);
+            top: -100px; left: -100px;
+        }
+        .orb-2 {
+            width: 450px; height: 450px;
+            background: radial-gradient(circle, rgba(236,72,153,0.35), transparent 70%);
+            top: -80px; right: -80px;
+        }
+        .orb-3 {
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(251,146,60,0.30), transparent 70%);
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+        }
+
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 2rem;
+            position: relative;
+            z-index: 1;
         }
-        
+
+        /* ── Nav ── */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 0;
+        }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .nav-icon {
+            width: 44px; height: 44px;
+            background: linear-gradient(135deg, #8B5CF6, #EC4899);
+            border-radius: 12px;
+            font-size: 22px; font-weight: 900;
+            line-height: 44px; text-align: center;
+            color: white;
+        }
+        .nav-name {
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #8B5CF6, #EC4899, #FB923C);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #9988BB;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: #C4B5FD; }
+
+        /* ── Hero ── */
         header {
             text-align: center;
-            padding: 4rem 0 2rem 0;
+            padding: 5rem 0 3rem;
         }
-        
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(139,92,246,0.15);
+            border: 1px solid rgba(139,92,246,0.30);
+            border-radius: 50px;
+            padding: 6px 18px;
+            font-size: 0.85rem;
+            color: #C4B5FD;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .hero-dot {
+            width: 7px; height: 7px;
+            background: linear-gradient(135deg, #8B5CF6, #EC4899);
+            border-radius: 50%;
+        }
+
         h1 {
             font-size: 4rem;
-            background: linear-gradient(135deg, #9B59B6, #E84393);
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff, #E2D9F3, #C4B5FD, #F9A8D4);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             margin-bottom: 1rem;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
         }
-        
+
         .tagline {
-            font-size: 1.5rem;
-            color: #a0a0a0;
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            color: #8C78B9;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
         }
-        
+
         .description {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem auto;
-            color: #ccc;
+            font-size: 1.15rem;
+            max-width: 560px;
+            margin: 0 auto 2.5rem;
+            color: #9988BB;
+            line-height: 1.8;
         }
-        
-        .button {
-            display: inline-block;
-            background: linear-gradient(135deg, #9B59B6, #E84393);
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #8B5CF6, #EC4899, #FB923C);
             color: white;
             padding: 1rem 2rem;
-            border-radius: 50px;
+            border-radius: 16px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+            font-weight: 800;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(139,92,246,0.35);
         }
-        
-        .button:hover {
+        .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(155, 89, 182, 0.4);
+            box-shadow: 0 8px 30px rgba(139,92,246,0.50);
         }
-        
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(139,92,246,0.12);
+            border: 1px solid rgba(139,92,246,0.35);
+            color: #C4B5FD;
+            padding: 1rem 2rem;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn-secondary:hover {
+            background: rgba(139,92,246,0.22);
+            transform: translateY(-2px);
+        }
+
+        /* ── Stats ── */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #8B5CF6, #EC4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: #6655AA;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* ── Features ── */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff, #C4B5FD);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        .section-title p {
+            color: #9988BB;
+            font-size: 1rem;
+        }
+
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
+            gap: 1.5rem;
+            margin: 2rem 0 5rem;
         }
-        
+
         .feature-card {
-            background: rgba(255,255,255,0.05);
+            background: linear-gradient(135deg,
+                rgba(139,92,246,0.10),
+                rgba(236,72,153,0.06),
+                rgba(251,146,60,0.04)
+            );
             padding: 2rem;
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: transform 0.3s ease;
+            border-radius: 20px;
+            border: 1px solid rgba(139,92,246,0.22);
+            transition: transform 0.2s, border-color 0.2s;
         }
-        
         .feature-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.08);
+            transform: translateY(-4px);
+            border-color: rgba(139,92,246,0.45);
         }
-        
+        .feature-icon {
+            width: 52px; height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+        }
+        .icon-purple { background: rgba(139,92,246,0.20); }
+        .icon-pink   { background: rgba(236,72,153,0.20); }
+        .icon-orange { background: rgba(251,146,60,0.20); }
+        .icon-cyan   { background: rgba(6,182,212,0.20); }
+        .icon-green  { background: rgba(34,197,94,0.20); }
+        .icon-blue   { background: rgba(59,130,246,0.20); }
+
         .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #E84393;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #E2D9F3;
+            margin-bottom: 0.7rem;
         }
-        
         .feature-card p {
-            color: #aaa;
+            color: #9988BB;
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
-        
-        .emoji {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: block;
+
+        /* ── CTA Banner ── */
+        .cta-banner {
+            background: linear-gradient(135deg,
+                rgba(139,92,246,0.18),
+                rgba(236,72,153,0.12)
+            );
+            border: 1px solid rgba(139,92,246,0.35);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 2rem 0 4rem;
         }
-        
+        .cta-banner h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff, #C4B5FD, #F9A8D4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.8rem;
+        }
+        .cta-banner p {
+            color: #9988BB;
+            margin-bottom: 1.8rem;
+            font-size: 1rem;
+        }
+
+        /* ── Footer ── */
         footer {
             text-align: center;
-            padding: 3rem 0;
-            margin-top: 3rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 2.5rem 0;
+            border-top: 1px solid rgba(255,255,255,0.06);
         }
-        
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 1.2rem;
+        }
+        .footer-icon {
+            width: 36px; height: 36px;
+            background: linear-gradient(135deg, #8B5CF6, #EC4899);
+            border-radius: 10px;
+            font-size: 18px; font-weight: 900;
+            line-height: 36px; text-align: center;
+            color: white;
+        }
+        .footer-name {
+            font-size: 1.2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #8B5CF6, #EC4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
         .legal-links {
             display: flex;
             justify-content: center;
@@ -122,63 +354,172 @@
             margin-bottom: 1rem;
             flex-wrap: wrap;
         }
-        
         .legal-links a {
-            color: #9B59B6;
+            color: #6655AA;
             text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
         }
-        
-        .legal-links a:hover {
-            text-decoration: underline;
+        .legal-links a:hover { color: #C4B5FD; }
+        .footer-copy {
+            color: #3D2D6A;
+            font-size: 0.85rem;
         }
-        
+
+        /* ── Responsive ── */
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .tagline { font-size: 1.2rem; }
+            h1 { font-size: 2.4rem; }
+            .tagline { font-size: 0.85rem; letter-spacing: 2px; }
             .description { font-size: 1rem; }
             .container { padding: 1rem; }
             .features { grid-template-columns: 1fr; }
             .legal-links { gap: 1rem; }
+            .nav-links { display: none; }
+            .stats { gap: 1.5rem; }
         }
     </style>
 </head>
 <body>
+
+    <!-- Ambient orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
     <div class="container">
+
+        <!-- ── Nav ── -->
+        <nav>
+            <a class="nav-brand" href="/">
+                <div class="nav-icon">Y</div>
+                <div class="nav-name">Yario</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="/privacy-policy.html">Privacy</a></li>
+                <li><a href="/terms.html">Terms</a></li>
+                <li><a href="mailto:support@abcai.chat">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- ── Hero ── -->
         <header>
-            <h1>ABC AI Chat</h1>
+            <div class="hero-badge">
+                <div class="hero-dot"></div>
+                Now Available on Google Play
+            </div>
+
+            <h1>Talk Freely,<br>Stay Close</h1>
+
             <div class="tagline">Your Personal AI Companion</div>
+
             <div class="description">
                 Meaningful conversations. Emotional support. Genuine connection.
+                Yario is the AI companion that truly understands you.
             </div>
-            <a href="#" class="button">Coming Soon on Google Play</a>
+
+            <div class="button-group">
+                <a href="https://play.google.com/store/apps/details?id=com.yario.app"
+                   class="btn-primary">
+                    ▶ &nbsp;Get it on Google Play
+                </a>
+                <a href="mailto:support@abcai.chat" class="btn-secondary">
+                    ✉ &nbsp;Contact Us
+                </a>
+            </div>
         </header>
-        
-        <div class="features">
-            <div class="feature-card">
-                <span class="emoji">🤖</span>
-                <h3>Intelligent Conversations</h3>
-                <p>Advanced AI that understands context, remembers your preferences, and responds with genuine empathy.</p>
+
+        <!-- ── Stats ── -->
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">AI</div>
+                <div class="stat-label">Powered</div>
             </div>
-            <div class="feature-card">
-                <span class="emoji">🔒</span>
-                <h3>Private & Secure</h3>
-                <p>End-to-end encryption ensures your conversations stay between you and your AI companion. We never share your data.</p>
+            <div class="stat">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Available</div>
             </div>
-            <div class="feature-card">
-                <span class="emoji">🎥</span>
-                <h3>Video & Voice Calls</h3>
-                <p>Experience real-time video and voice calls with your AI companion for deeper, more meaningful connection.</p>
+            <div class="stat">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Private</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">Free</div>
+                <div class="stat-label">To Start</div>
             </div>
         </div>
-        
+
+        <!-- ── Features ── -->
+        <div id="features" class="section-title">
+            <h2>Everything You Need</h2>
+            <p>Yario brings you closer through the power of AI</p>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon icon-purple">🤖</div>
+                <h3>Intelligent Conversations</h3>
+                <p>Advanced AI that understands context, remembers your preferences,
+                and responds with genuine empathy every time.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon icon-pink">🔒</div>
+                <h3>Private & Secure</h3>
+                <p>Your conversations are encrypted and private. Yario never shares
+                your personal data with third parties.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon icon-orange">🎥</div>
+                <h3>Voice & Video Calls</h3>
+                <p>Experience real-time voice and video calls with your Yario AI
+                companion for a deeper, more personal connection.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon icon-cyan">🌍</div>
+                <h3>Multi-Language Support</h3>
+                <p>Talk to Yario in your own language. We support multiple languages
+                so you can always express yourself naturally.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon icon-green">✨</div>
+                <h3>Personalised Experience</h3>
+                <p>Yario adapts to your personality, mood, and communication style
+                to create a truly unique companion experience.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon icon-blue">🌐</div>
+                <h3>Meet New People</h3>
+                <p>Connect with real people online through Yario's explore feature.
+                Make friends, share moments, stay close.</p>
+            </div>
+        </div>
+
+        <!-- ── CTA Banner ── -->
+        <div class="cta-banner">
+            <h2>Your World Comes Alive</h2>
+            <p>Join thousands of people already using Yario for
+            meaningful AI conversations.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.yario.app"
+               class="btn-primary">
+                ▶ &nbsp;Download Yario Free
+            </a>
+        </div>
+
+        <!-- ── Footer ── -->
         <footer>
+            <div class="footer-brand">
+                <div class="footer-icon">Y</div>
+                <div class="footer-name">Yario</div>
+            </div>
             <div class="legal-links">
                 <a href="/privacy-policy.html">Privacy Policy</a>
                 <a href="/terms.html">Terms of Service</a>
                 <a href="mailto:support@abcai.chat">Contact Support</a>
             </div>
-            <p>© 2026 ABC AI Chat. All rights reserved.</p>
+            <p class="footer-copy">© 2026 Yario. All rights reserved.</p>
         </footer>
+
     </div>
+
 </body>
 </html>
