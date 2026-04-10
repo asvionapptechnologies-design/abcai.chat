@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Reset Your Yario Password</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    const hash = window.location.hash;
+    const search = window.location.search;
+    const deepLink = "com.yario.app://reset-password" + search + hash;
+    window.location.href = deepLink;
+    setTimeout(() => {
+      document.getElementById("fallback").style.display = "block";
+    }, 2000);
+  </script>
+  <style>
+    body {
+      margin: 0;
+      background: #080112;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      color: white;
+    }
+    .card {
+      background: #150A2E;
+      border: 1px solid #8B5CF6;
+      border-radius: 20px;
+      padding: 40px 32px;
+      max-width: 360px;
+      width: 90%;
+    }
+    .logo {
+      width: 64px; height: 64px;
+      background: linear-gradient(135deg, #8B5CF6, #EC4899);
+      border-radius: 16px;
+      font-size: 32px; font-weight: 900;
+      line-height: 64px;
+      margin: 0 auto 20px;
+    }
+    h2 { margin: 0 0 10px; font-size: 22px; color: white; }
+    p { color: #9988BB; font-size: 14px; line-height: 22px; margin: 0 0 24px; }
+    a.btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #8B5CF6, #EC4899);
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    #fallback { display: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">Y</div>
+    <h2>Opening Yario...</h2>
+    <p>Redirecting you to the Yario app to reset your password.</p>
+    <div id="fallback">
+      <p>If the app didn't open, tap the button below:</p>
+      <a class="btn" id="openApp" href="#">Open Yario App</a>
+      <script>
+        document.getElementById("openApp").href =
+          "com.yario.app://reset-password" +
+          window.location.search +
+          window.location.hash;
+      </script>
+    </div>
+  </div>
+</body>
+</html>
