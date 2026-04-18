@@ -1,206 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - Yario</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: #0a0a0f;
-            color: #ffffff;
-            line-height: 1.6;
-            padding: 2rem;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #1a1a2e;
-            padding: 3rem;
-            border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 1.8rem;
-        }
-        .brand-icon {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, #8B5CF6, #EC4899);
-            border-radius: 14px;
-            font-size: 28px;
-            font-weight: 900;
-            line-height: 56px;
-            text-align: center;
-            color: white;
-            flex-shrink: 0;
-        }
-        .brand-name {
-            font-size: 2rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #8B5CF6, #EC4899, #FB923C);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: -0.5px;
-        }
-        .brand-tagline {
-            font-size: 12px;
-            color: #8C78B9;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-top: 2px;
-        }
-        h1 {
-            font-size: 2.5rem;
-            background: linear-gradient(135deg, #8B5CF6, #EC4899);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 0.5rem;
-        }
-        h2 {
-            color: #EC4899;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        .last-updated {
-            color: #888;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #333;
-        }
-        p {
-            margin-bottom: 1rem;
-            color: #ccc;
-        }
-        ul {
-            margin-left: 2rem;
-            margin-bottom: 1rem;
-            color: #ccc;
-        }
-        li {
-            margin-bottom: 0.5rem;
-        }
-        a {
-            color: #8B5CF6;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .footer {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #333;
-            text-align: center;
-            color: #666;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Yario</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; background: #0D0520; color: #E2D9F3; line-height: 1.8; }
+  nav { padding: 20px 40px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(139,92,246,0.2); }
+  .logo { width: 36px; height: 36px; background: linear-gradient(135deg, #8B5CF6, #EC4899); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 18px; color: white; }
+  .brand { font-size: 20px; font-weight: 700; color: white; }
+  .container { max-width: 780px; margin: 0 auto; padding: 60px 24px 100px; }
+  h1 { font-size: 36px; font-weight: 800; background: linear-gradient(135deg, #8B5CF6, #EC4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+  .updated { font-size: 13px; color: #7C6FA8; margin-bottom: 48px; }
+  h2 { font-size: 20px; font-weight: 700; color: #C4B5FD; margin: 40px 0 14px; }
+  p { color: #B8A8D8; margin-bottom: 14px; font-size: 15px; }
+  ul { color: #B8A8D8; margin: 10px 0 14px 20px; font-size: 15px; }
+  li { margin-bottom: 8px; }
+  .card { background: rgba(139,92,246,0.07); border: 1px solid rgba(139,92,246,0.2); border-radius: 14px; padding: 20px 24px; margin: 20px 0; }
+  a { color: #A78BFA; text-decoration: none; }
+  .contact-box { background: linear-gradient(135deg, rgba(139,92,246,0.12), rgba(236,72,153,0.08)); border: 1px solid rgba(139,92,246,0.25); border-radius: 16px; padding: 28px; margin-top: 48px; text-align: center; }
+  .contact-box h3 { color: white; font-size: 18px; margin-bottom: 8px; }
+  .contact-box p { margin: 0; }
+</style>
 </head>
 <body>
-    <div class="container">
+<nav>
+  <div class="logo">Y</div>
+  <span class="brand">Yario</span>
+</nav>
+<div class="container">
+  <h1>Terms of Service</h1>
+  <p class="updated">Last updated: April 18, 2026 &nbsp;·&nbsp; Effective: April 18, 2026</p>
 
-        <!-- ✅ Yario brand header -->
-        <div class="brand">
-            <div class="brand-icon">Y</div>
-            <div>
-                <div class="brand-name">Yario</div>
-                <div class="brand-tagline">Talk Freely · Stay Close</div>
-            </div>
-        </div>
+  <p>By downloading or using Yario, you agree to these Terms of Service. Please read them carefully.</p>
 
-        <h1>Terms of Service</h1>
-        <div class="last-updated">Last Updated: April 10, 2026</div>
+  <h2>1. Eligibility</h2>
+  <p>You must be at least <strong>18 years old</strong> to use Yario. By using the app, you confirm you are 18 or older. We reserve the right to terminate accounts found to belong to minors.</p>
 
-        <p>Welcome to <strong style="color:#C4B5FD;">Yario</strong>. By accessing or using the
-        Yario app, you agree to be bound by these Terms of Service. Please read them carefully.
-        If you do not agree, do not use Yario.</p>
+  <h2>2. Account Responsibility</h2>
+  <ul>
+    <li>You are responsible for maintaining the security of your account</li>
+    <li>You must provide accurate information during registration</li>
+    <li>One account per person — creating multiple accounts is not permitted</li>
+    <li>You must not share your account with others</li>
+  </ul>
 
-        <h2>1. Acceptance of Terms</h2>
-        <p>By creating an account or using Yario in any way, you confirm that you have read,
-        understood, and agree to these Terms of Service and our
-        <a href="/privacy-policy.html">Privacy Policy</a>.</p>
+  <h2>3. Acceptable Use</h2>
+  <p>You agree NOT to:</p>
+  <div class="card">
+    <ul>
+      <li>Harass, threaten, or abuse other users</li>
+      <li>Share explicit, violent, or harmful content</li>
+      <li>Impersonate other people or create fake profiles</li>
+      <li>Use the platform for spam or commercial solicitation</li>
+      <li>Attempt to hack or reverse-engineer the app</li>
+      <li>Share illegal content of any kind</li>
+      <li>Use the app to exploit, harm, or attempt to harm minors</li>
+    </ul>
+  </div>
 
-        <h2>2. Age Requirement</h2>
-        <p>You must be at least <strong>18 years old</strong> to use Yario. By using the app,
-        you confirm that you meet this age requirement. We reserve the right to terminate
-        accounts found to belong to minors.</p>
+  <h2>4. AI Companion</h2>
+  <p>Yario's AI is designed for companionship and emotional support. The AI is not a licensed therapist or medical professional. Do not rely on Yario for medical, legal, or emergency advice. In case of emergency, please contact appropriate emergency services.</p>
 
-        <h2>3. Account Responsibility</h2>
-        <p>You are responsible for:</p>
-        <ul>
-            <li>Maintaining the confidentiality of your Yario account credentials</li>
-            <li>All activities that occur under your account</li>
-            <li>Notifying us immediately of any unauthorised use of your account</li>
-        </ul>
+  <h2>5. Subscriptions and Payments</h2>
+  <ul>
+    <li>Subscriptions are billed through Google Play and governed by Google Play's terms</li>
+    <li>Subscriptions auto-renew unless cancelled at least 24 hours before renewal</li>
+    <li>Manage or cancel subscriptions in Google Play Account Settings</li>
+    <li>Refunds are handled by Google Play's refund policy</li>
+    <li>Prices may vary by region based on local currency</li>
+  </ul>
 
-        <h2>4. Acceptable Use</h2>
-        <p>You agree not to use Yario to:</p>
-        <ul>
-            <li>Violate any applicable laws or regulations</li>
-            <li>Harass, abuse, or harm other users</li>
-            <li>Generate, share, or distribute illegal or harmful content</li>
-            <li>Attempt to reverse engineer or exploit the Yario platform</li>
-            <li>Use automated bots or scripts to access the service</li>
-            <li>Impersonate any person or entity</li>
-        </ul>
+  <h2>6. Content Ownership</h2>
+  <p>You retain ownership of content you create. By using Yario, you grant us a limited license to store and process your content to provide the service. We do not claim ownership of your conversations.</p>
 
-        <h2>5. AI Disclaimer</h2>
-        <p>Yario uses artificial intelligence to generate responses. While we strive to provide
-        a safe and helpful experience, AI responses may occasionally be inaccurate, incomplete,
-        or unexpected. Yario is not liable for decisions made based on AI-generated content.
-        Use the service at your own discretion.</p>
+  <h2>7. Privacy</h2>
+  <p>Your use of Yario is also governed by our <a href="/privacy">Privacy Policy</a>, which is incorporated into these Terms.</p>
 
-        <h2>6. Premium Features</h2>
-        <p>Some Yario features require a paid subscription. By subscribing:</p>
-        <ul>
-            <li>You agree to the applicable subscription fees</li>
-            <li>Payments are processed through Google Play</li>
-            <li>Subscriptions renew automatically unless cancelled</li>
-            <li>You can cancel anytime through your Google Play account settings</li>
-            <li>Fees already charged are non-refundable except as required by law</li>
-        </ul>
+  <h2>8. Termination</h2>
+  <p>We reserve the right to suspend or terminate accounts that violate these Terms without notice. You may delete your account at any time from the Profile screen.</p>
 
-        <h2>7. Intellectual Property</h2>
-        <p>All content, branding, and technology within Yario — including the name, logo,
-        design, and AI models — are the property of Yario and protected by applicable
-        intellectual property laws. You may not copy, reproduce, or distribute any part
-        of Yario without prior written permission.</p>
+  <h2>9. Disclaimers</h2>
+  <p>Yario is provided "as is." We make no warranties regarding uptime, accuracy of AI responses, or fitness for any particular purpose. We are not liable for any damages arising from use of the service.</p>
 
-        <h2>8. Termination</h2>
-        <p>We reserve the right to suspend or permanently terminate your Yario account if
-        you violate these Terms of Service, without prior notice. You may also delete your
-        account at any time through the app settings.</p>
+  <h2>10. Governing Law</h2>
+  <p>These Terms are governed by the laws of India. Any disputes shall be resolved in the courts of Visakhapatnam, Andhra Pradesh, India.</p>
 
-        <h2>9. Limitation of Liability</h2>
-        <p>To the fullest extent permitted by law, Yario shall not be liable for any
-        indirect, incidental, special, or consequential damages arising from your use of
-        the service.</p>
+  <h2>11. Contact</h2>
+  <p>For questions about these Terms, contact us at <a href="mailto:support@abcai.chat">support@abcai.chat</a></p>
 
-        <h2>10. Changes to These Terms</h2>
-        <p>We may update these Terms of Service from time to time. We will notify you of
-        significant changes by updating the date above. Continued use of Yario after
-        changes constitutes your acceptance of the updated terms.</p>
-
-        <h2>11. Contact Us</h2>
-        <p>If you have any questions about these Terms of Service, please contact the
-        Yario team:</p>
-        <p>Email: <a href="mailto:legal@abcai.chat">legal@abcai.chat</a></p>
-
-        <div class="footer">
-            <p>© 2026 Yario. All rights reserved.</p>
-        </div>
-
-    </div>
+  <div class="contact-box">
+    <h3>Need Help?</h3>
+    <p>Email us at <a href="mailto:support@abcai.chat">support@abcai.chat</a><br>We respond within 48 hours.</p>
+  </div>
+</div>
 </body>
 </html>
